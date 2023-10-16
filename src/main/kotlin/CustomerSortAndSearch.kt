@@ -69,7 +69,7 @@ fun sortCustomers(customerList: MutableList<Customer>) {
 fun searchByName(customerList: MutableList<Customer>) {
     // This allows the user to search for a customers by name where the input only needs to be part of the whole name
     print("\nEnter the name you would like to search for\n>>>")
-    var searchTerm = readln()
+    val searchTerm = readln()
     println()
     for (x in customerList) {
         if (x.name.contains(searchTerm, true)) {
@@ -82,7 +82,7 @@ fun searchByName(customerList: MutableList<Customer>) {
 fun searchByEmail(customerList: MutableList<Customer>) {
     // This allows user to serach for customers by email where the input only needs to be a part of the whole email
     print("\nEnter the email you would like to search for\n>>>")
-    var searchTerm = readln()
+    val searchTerm = readln()
     println()
     for (x in customerList) {
         if (x.email.contains(searchTerm, true)) {
@@ -95,7 +95,7 @@ fun searchByEmail(customerList: MutableList<Customer>) {
 fun searchByMobile(customerList: MutableList<Customer>) {
     // This allows the user to search for customers by mobile where the input only needs to be a part of the whole mobile
     print("\nEnter the mobile you would like to search for\n>>>")
-    var searchTerm = readln()
+    val searchTerm = readln()
     println()
     for (x in customerList) {
         if (x.mobile.contains(searchTerm, true)) {

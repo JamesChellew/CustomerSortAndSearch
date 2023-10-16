@@ -70,11 +70,16 @@ fun searchByName(customerList: MutableList<Customer>) {
     // This allows the user to search for a customers by name where the input only needs to be part of the whole name
     print("\nEnter the name you would like to search for\n>>>")
     val searchTerm = readln()
+    var match = false
     println()
     for (x in customerList) {
         if (x.name.contains(searchTerm, true)) {
             displaySingleCustomer(x)
+            match = true
         }
+    }
+    if (!match){
+        println("\nNo Matching Results\n")
     }
     println()
 }
@@ -83,11 +88,16 @@ fun searchByEmail(customerList: MutableList<Customer>) {
     // This allows user to serach for customers by email where the input only needs to be a part of the whole email
     print("\nEnter the email you would like to search for\n>>>")
     val searchTerm = readln()
+    var match = false
     println()
     for (x in customerList) {
         if (x.email.contains(searchTerm, true)) {
             displaySingleCustomer(x)
+            match = true
         }
+    }
+    if (!match){
+        println("\nNo Matching Results\n")
     }
     println()
 }
@@ -96,11 +106,16 @@ fun searchByMobile(customerList: MutableList<Customer>) {
     // This allows the user to search for customers by mobile where the input only needs to be a part of the whole mobile
     print("\nEnter the mobile you would like to search for\n>>>")
     val searchTerm = readln()
+    var match = false
     println()
     for (x in customerList) {
         if (x.mobile.contains(searchTerm, true)) {
             displaySingleCustomer(x)
+            match = true
         }
+    }
+    if (!match){
+        println("\nNo Matching Results\n")
     }
     println()
 }
@@ -116,7 +131,7 @@ fun saveCustomerList(customerList: MutableList<Customer>) {
         fileOutputStream.close()
         objectOutputStream.close()
     } catch (e: Exception) {
-        println("$e \n")
+        println("An Error has Occurred: $e \n")
     }
 
 }
@@ -133,7 +148,7 @@ fun loadCustomerList(): MutableList<Customer> {
         fileInputStream.close()
         objectInputStream.close()
     } catch (e: Exception) {
-        println("$e \n")
+        println("An Error has Occurred: $e \n")
     }
     return customerList
 }
